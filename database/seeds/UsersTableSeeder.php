@@ -16,7 +16,7 @@ class UsersTableSeeder extends Seeder
     {
         // Add the master administrator, user id of 1
         User::create([
-            'name'              => 'Admin',
+            'name'              => config('access.users.admin_role'),
             'email'             => 'admin@admin.com',
             'password'          =>  Hash::make('123456'),
             'email_verified_at' => now(),
@@ -29,7 +29,7 @@ class UsersTableSeeder extends Seeder
         // Add an employee can view the admin panel
 
         User::create([
-            'name'              => 'employee',
+            'name'              => config('access.users.employee_role'),
             'email'             => 'employee@employee.com',
             'password'          =>  Hash::make('123456'),
             'email_verified_at' => now(),

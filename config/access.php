@@ -5,7 +5,7 @@ return [
          /*
          * The name of the super administrator role
          */
-        'admin_role' => 'administrator',
+        'admin_role' => 'Admin',
 
         /*
          * The employee role

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Cart\Traits\Relationship;
+namespace App\Models\User\Traits\Relationship;
 
 trait UserRelationship{
 

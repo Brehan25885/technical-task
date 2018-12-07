@@ -11,10 +11,28 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Auth::routes();
+        Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+        //admin routes
+            Route::group(['namespace' => 'Backend',
+                            'prefix' => 'admin', 'as' => 'admin.',
+                            'middleware' => 'admin'], function () {
+
+                                include_route_files(__DIR__.'/backend/');
+
+                            });
+
+
+            //frontend routes(normal user)
+             Route::group(['middleware' => ['web']], function () {
+                Route::group([
+                    'namespace' => 'Frontend','as' => 'frontend.',
+
+                ], function () {
+                    include_route_files(__DIR__.'/frontend/');
+
+
+                });
+            });
+

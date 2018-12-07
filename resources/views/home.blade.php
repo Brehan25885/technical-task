@@ -15,6 +15,10 @@
                     @endif
 
                     You are logged in!
+
+                    @if(auth()->user()->isAdmin())
+                    <a href="/admin">Go TO Admin Dashboard</a>
+                    @endif
                 </div>
             </div>
         </div>
