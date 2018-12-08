@@ -9,7 +9,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <!--     Fonts and icons     -->
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+
   <!-- Material Kit CSS -->
   <link href="{{ asset('css/backend.css') }}" rel="stylesheet" />
 
@@ -26,22 +26,51 @@
       Tip 2: you can also add an image using data-image tag
   -->
       <div class="logo">
-        <a href="http://www.creative-tim.com" class="simple-text logo-mini">
-          CT
+        <a href="#" class="simple-text logo-mini">
+          Admin
         </a>
-        <a href="http://www.creative-tim.com" class="simple-text logo-normal">
-          Creative Tim
+
+        <a href="#" class="simple-text logo-normal">
+          Dashboard
         </a>
       </div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="nav-item active  ">
+          <li class="nav-item">
             <a class="nav-link" href="#0">
               <i class="material-icons">dashboard</i>
               <p>Dashboard</p>
             </a>
           </li>
           <!-- your sidebar here -->
+          <li class="nav-item">
+            <a class="nav-link" href="/admin/products">
+              <i class="material-icons">bubble_chart</i>
+              <p>products</p>
+            </a>
+          </li>
+
+            <li class="nav-item">
+            <a class="nav-link" href="#0">
+              <i class="material-icons">content_paste</i>
+              <p>orders</p>
+            </a>
+          </li>
+
+           <li class="nav-item">
+            <a class="nav-link" href="#0">
+              <i class="material-icons">location_ons</i>
+              <p>vehicles</p>
+            </a>
+          </li>
+
+           <li class="nav-item">
+            <a class="nav-link" href="#0">
+              <i class="material-icons">person</i>
+              <p>Users</p>
+            </a>
+          </li>
+
         </ul>
       </div>
     </div>
@@ -73,6 +102,8 @@
       <!-- End Navbar -->
       <div class="content">
         <div class="container-fluid">
+        @include('backend.includes.messages')
+
           <!-- your content here -->
 
           @yield('content')
@@ -101,6 +132,14 @@
       </footer>
     </div>
   </div>
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <script src="{{ asset('js/dataTable.js') }}"></script>
+  <script src="{{ asset('js/deleteAlert.js') }}"></script>
+
+    @stack('after-scripts')
+
 </body>
 
 </html>

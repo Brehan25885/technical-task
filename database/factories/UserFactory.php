@@ -22,3 +22,15 @@ $factory->define(App\User::class, function (Faker $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+
+$factory->define(App\Models\Product\Product::class, function (Faker $faker) {
+    return [
+        'name' => $faker->name,
+        'description' => $faker->paragraph,
+        'price' => $faker->numberBetween(10,50),
+        'image' => 'default.png',
+
+
+    ];
+});
